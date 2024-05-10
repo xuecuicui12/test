@@ -8,7 +8,7 @@ on: workflow_dispatch
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build_on_test:
+  build_on_linux:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -24,3 +24,10 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           date
+  build_on_windows:
+    runs-on: windows-latest
+    steps:
+      - name: Run multi-line script
+        run: |
+          echo "hello githubactions"
+          Get-Dateet
